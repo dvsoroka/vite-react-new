@@ -26,4 +26,4 @@ for(let i = 0; i < someArray.length; i++) {
     
 }
 (My answer: Using .map() permits us to avoid hardcoding data in our components, which
-make them much miore flexible and reausable.)
+make them much miore flexible and reusable.)
