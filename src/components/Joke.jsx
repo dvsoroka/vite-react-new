@@ -31,10 +31,32 @@ display: none removes the element completely from the document, it doesn't take 
 
     return (
         <div>
-            {props.setup && <h3>Setup:  {props.setup} </h3>} 
-            {isShown && <p>{props.punchline}</p>} 
+            {props.setup && <h3>{props.setup} </h3>} 
+{/*  Using local state "isShown" we can decide wether the DOM element will be displayed or not :
+    first: we surround everything in curly braces and that allows us to put a JavaScript expression in here
+            <p>{props.punchline}</p>
+    in our case we are going to say: "if isShown is true AND this paragraph":
+*/}
+            {isShown && <p>{props.punchline}</p>}   
+{/* in React anytime we have an element on the screen that we want to display if something is true or completely hide 
+or not even render to the page if that thing is "false"; in the line above here with the "props.setup" we realized that 
+some jokes were just one-liners they didn't have a "setup" and a "punchline" they just were the "punchline" and in our case 
+we looked at our incoming  props.setup and said "if that's faulsey, then don't display this <h3> at all". 
+Similarly wit our local state of "isShown" we can say: "I only want to display or render this paragraph if isShown is true".
+By doing that we can have a toggle button that when it's clicked will change "isShown" of this individual <Joke /> component
+to "true" and therefore it will display our paragraph. More specifically when I click this button React will re-render this 
+component because its state has changed and therefore, when it's running the "return (<div> ...)" value again and determining 
+what should actually be placed on the screen "isShown" is now "true" and therefore this expression {isShown && <p>{props.punchline}</p>} 
+gets run and put onto the page for us. 
+    So as recap:
+    In React when you have an element that you either  want to display or not display at all, using the 'AND' logical operator "&&"
+is a really concise and great way to do that.
 
-            {/* <p style={styles}>Punchline:  {props.punchline}</p> */}
+https://www.youtube.com/watch?v=bMknfKXIFA8 (7:35:20)
+*/}
+
+
+            {/* <p style={styles}>{props.punchline}</p> */}
 
             {/* <button 
                 onClick={() => {
