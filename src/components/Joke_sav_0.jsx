@@ -2,66 +2,14 @@ import React from "react";
 import '../../style.css'
 
 export default function Joke(props) {
-    /**
-     * Challenge (https://scrimba.com/learn/learnreact/conditional-rendering--co00d4a3c9a328b5ff96f418e):
-     * - Create state `isShown` (boolean, default to `false`)
-     * - Add a button that toggles the value back and forth
-     * - Only display the punchline paragraph if `isShown` is true
-     */
-    const [isShown, setIsShown] = React.useState(false)
-    
-    function toggleShown() {
-        setIsShown(prevShown => !prevShown)
-    }
-
-
-    const styles = {
-        display: isShown ? "block" : "none"
-    }
- /*  https://stackoverflow.com/questions/1992114/how-do-you-create-a-hidden-div-that-doesnt-create-a-line-break-or-horizontal-sp
- To hide element:
-
- <div id="divCheckbox" style="display: none;">
-visibility: hidden hides the element, but it still takes up space in the layout.
-
-display: none removes the element completely from the document, it doesn't take up any space.
- 
-*/
-
-
     return (
         <div>
-            {props.setup && <h3>Setup:  {props.setup} </h3>} 
-            {isShown && <p>{props.punchline}</p>} 
-
-            {/* <p style={styles}>Punchline:  {props.punchline}</p> */}
-
-            {/* <button 
-                onClick={() => {
-                    console.log(`Joke # ${props.id} isShown: ${isShown}`)
-                    setIsShown(prevState => !prevState)}}
-            
-            >{isShown ? "TRUE" : "FALSE"} */}
-            <button onClick={toggleShown}>
-                Show Punchline
-            </button>
+            {props.setup && <h3>Setup:  {props.setup} </h3>}  
+            <p>Punchline:  {props.punchline}</p>
             <hr />
         </div>
     )  
 }
-
-
-const cond1 = true
-const cond2 = false
-
-if (cond1 && cond2) {
-    // this code will NOT run
-}
-
-if (cond1 && console.log("Hello there")) {
-     // this code will run while cond1 === true
-}
-
 // In JokesData.js we initially had lines like:
 //     setup: "I got my daughter a fridge for her birthday.",  // It just so happens that I am using the same name for the prop that I'am passing to my Joke.js component (props.setup) and the 
 // But if there would be "question:" as follows
