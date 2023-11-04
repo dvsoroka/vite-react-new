@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.jsx'       // Jokes App
-//import App from './App_messages.jsx'    // Messages App
+//import App from './App.jsx'       // Jokes App
+import App from './App_messages.jsx'    // Messages App
 
 //import './index_orig.css'
 import '../style.css'
