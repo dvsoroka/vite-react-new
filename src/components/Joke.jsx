@@ -64,9 +64,15 @@ https://www.youtube.com/watch?v=bMknfKXIFA8 (7:35:20)
                     setIsShown(prevState => !prevState)}}
             
             >{isShown ? "TRUE" : "FALSE"} */}
-            <button onClick={toggleShown}>
-                Show Punchline
-            </button>
+
+{/*         <button onClick={toggleShown}> Show Punchline</button>                                */}
+
+
+{/*         {isShown && <button onClick={toggleShown}> Hide Punchline</button>}
+            {!isShown && <button onClick={toggleShown}> Show Punchline</button>}             */}
+
+            <button onClick={toggleShown}>{isShown ? "Hide" : "Show"} Punchline</button>       
+
             <hr />
         </div>
     )  
